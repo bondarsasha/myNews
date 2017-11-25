@@ -1,0 +1,362 @@
+html {
+  font-size: 62.5%; }
+  html body {
+    background-color: #f0f3f5;
+    color: #000; }
+
+    /*---------навигация--------*/
+
+.list_inline {
+  margin: 0;
+}
+#drop_down {
+  margin: 0;
+}
+.info {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 20px 10px;
+  list-style-type: none;
+  transition: .3s all;
+}
+.info:hover {
+  text-decoration: none;
+  background-color: #357ebd;
+  color: #fff;
+}
+
+  /*-------Бургер меню---------*/
+
+.nav-trigger {
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  z-index: 2;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-image: url("../img/burger-button.png");
+  background-size: contain;
+}
+
+/*-----Хедер--------*/
+
+#header {
+  height: 80px;
+  background-color: #357ebd;
+}
+.logo {
+  text-transform: uppercase;
+  color: #fefefe;
+}
+.sign, .check {
+  margin-top: 30px;
+  height: 30px;
+
+}
+.sign_in, .check_in {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fefefe;
+  font-size: 14px;
+}
+.sign_in:hover, .check_in:hover {
+  color: #fefefe;
+}
+#modal_sign, #modal_check {
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  right:0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+#sign_form, #check_form {
+  position: relative;
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background: #eee;
+  border-radius: 10px;
+  padding: 25px 15px;
+}
+#sign_form h2, #check_form h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#close, #closeCheck {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 5px;
+}
+.form-grup{
+ margin-bottom: 15px;
+}
+.form-grup label{
+ padding-top: 4px;
+}
+.form-grup label:after{
+ content: "*";
+ color: red;
+}
+.form-grup input[type="submit"]{
+ padding: 4px;
+ border-radius: 5px;
+ outline: none;
+}
+
+.search {
+  width: 150px;
+  position: relative;
+  margin: 25px 0 0 0;
+}
+.search input {
+  border: none;
+}
+.search .find {
+  width: 100%;
+  padding: 8px 37px 9px 15px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  background: #EEE;
+  font: 13px Tahoma, Arial, sans-serif;
+  color: #555;
+  outline: none;
+}
+.search .find:focus {
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2), inset 0 1px 2px rgba(0,0,0,0.4);
+  background: #E8E8E8;
+  color: #333;
+}
+.search .submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 37px;
+  height: 100%;
+  cursor: pointer;
+  background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+  opacity: 0.5;
+}
+.search .submit:hover {
+  opacity: 0.8;
+}
+
+     /*----------Слайдер, Видио, Курс Валют-----------*/
+
+#top_New_Slider {
+  height: 350px;
+}
+.important_News {
+  font-size: 24px;
+  margin: 15px 0 15px 0;
+}
+.slider {
+  height: 250px;
+  padding: 0;
+  margin: 0;
+}
+.control-panel {
+  position: absolute;
+  height: 20px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.control-panel span {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: #fefefe;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#activeBtn {
+  background-color: #fefefe;
+  opacity: 0.5;
+}
+.control-panel span:hover {
+  background-color: #357ebd;
+}
+.video {
+  padding: 0;
+  margin: 0 0 0 30px;
+  height: 250px;
+}
+.weather {
+  margin: 0 0 0 30px;
+  padding: 0;
+  height: 250px;
+  text-align: center;
+}
+
+    /*---------Мейн-------------*/
+
+.news-title {
+  text-transform: uppercase;
+  color: #357ebd;
+  font-size: 20px;
+}
+.news-title a:hover {
+  text-decoration: none;
+  color: #bb1919;
+}
+.news-rubric {
+  font-size: 18px;
+  color: #bb1919;
+  margin: 0 15px 0 0;
+}
+.news-data {
+  font-size: 16px;
+}
+.news-img {
+  margin: 15px 0 0 0;
+}
+.news-text {
+  margin: 15px 0 0 0;
+  font-size: 18px;
+}
+#drop-down-tabs {
+  cursor: pointer;
+  margin: 50px 0 0 0;
+}
+
+   /*--------Футер---------*/
+
+#footer {
+  height: 150px;
+  margin: 50px 0 0 0;
+  padding: 40px;
+  background-color: #666666;
+
+}
+.end {
+  font-size: 12px;
+  color: #fefefe;
+}
+/*--------media---------*/
+
+@media screen and (min-width:320px) and (max-width:767px) {
+  #nav {
+    display: none;
+  }
+  #header {
+    height: 100px;
+  }
+  .sign {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+  }
+  .check {
+    margin: 0;
+    padding: 0;
+  }
+  #sign_form, #check_form {
+    width: 80%;
+    margin-top: 50px;
+    padding: 0 5vw;
+  }
+  #sign_form h2, #check_form h2 {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+  #close, #closeCheck {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px;
+  }
+  #name, #password {
+    margin-top: 5px;
+  }
+  .search {
+    display: none;
+  }
+  .important_News, .slider, .video, .weather {
+    padding: 10px;
+    margin: 0;
+  }
+  #footer {
+    height: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+}
+/*скролл вверх*/
+  #toTop {
+  	display:none;
+  	text-decoration:none;
+  	position:fixed;
+  	bottom:10px;
+  	right:10px;
+  	overflow:hidden;
+  	width:51px;
+  	height:51px;
+  	border:none;
+  	text-indent:100%;
+  	background:url(../img/ui.totop.png) no-repeat left top;
+  }
+  #toTopHover {
+  	background:url(../img/ui.totop.png) no-repeat left -51px;
+  	width:51px;
+  	height:51px;
+  	display:block;
+  	overflow:hidden;
+  	float:left;
+  	opacity: 0;
+  	-moz-opacity: 0;
+  	filter:alpha(opacity=0);
+  }
+  #toTop:active, #toTop:focus {
+  	outline:none;
+  }
+  /*гармошка*/
+  #drop-down-tabs {
+    margin: 0 0 10px 0;
+  }
+@media screen and (min-width:768px) and (max-width:970px) {
+  .nav-trigger {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    z-index: 2;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    background-image: url("../img/burger-button.png");
+  }
+  .list_inline {
+    margin: 0 0 0 10px;
+  }
+  #drop_down {
+    margin: 0 0 0 10px;
+  }
+  #header {
+    padding: 0;
+    margin: 0;
+  }
+  #sign_form, #check_form {
+    width: 50%;
+    margin-top: 100px;
+  }
+  #top_New_Slider {
+    padding: 10px;
+    margin: 0 0 0 10px;
+  }
+  .weather {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+  }
+}
