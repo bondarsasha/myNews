@@ -236,6 +236,21 @@ function ready() {
             }
           };
 
+          //advertising
+          function getCookie(name) {
+            var matches = document.cookie.match(new RegExp(
+              "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+          }
+
+          var showAdvertising = document.getElementById('advertising');
+          setInterval(function() {
+            if (getCookie('show') == undefined) {
+              showAdvertising.style.display = 'none';
+            }
+          }, 1000);
+
 
 
 

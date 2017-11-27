@@ -108,6 +108,18 @@ html {
  border-radius: 5px;
  outline: none;
 }
+#advertising {
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+#advertising p {
+  font-size: 20px;
+}
+#advertising img {
+  width: 100%;
+  height: 100%;
+}
 
 .search {
   width: 150px;
