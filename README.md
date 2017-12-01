@@ -1,6 +1,6 @@
 # newsPaper
-Site: News Portal,
-Target: Develop a website,
+h1 Site: News Portal,
+h2 Target: Develop a website,
 Author: Alexandr V.Bondar,
 Contact of the Author Skype: +380932193743,
 Contact of the Author Gmail: bondaralexandr1991@gmail.com,
