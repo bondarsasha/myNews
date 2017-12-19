@@ -4,65 +4,33 @@ html {
     background-color: #f0f3f5;
     color: #000; }
 
-    /*---------навигация--------*/
-
-.list_inline {
-  margin: 0;
-}
-#drop_down {
-  margin: 0;
-}
-.info {
-  display: inline-block;
-  text-transform: uppercase;
-  padding: 20px 10px;
-  list-style-type: none;
-  transition: .3s all;
-}
-.info:hover {
-  text-decoration: none;
-  background-color: #357ebd;
-  color: #fff;
-}
-
-  /*-------Бургер меню---------*/
-
-.nav-trigger {
-  position: absolute;
-  left: 25px;
-  top: 10px;
-  z-index: 2;
-  color: #fff;
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
-  background-image: url("../img/burger-button.png");
-  background-size: contain;
-}
-
 /*-----Хедер--------*/
 
 #header {
-  height: 80px;
-  background-color: #357ebd;
+  height: 60px;
 }
 .logo {
   text-transform: uppercase;
-  color: #fefefe;
+  color: #357ebd;
+  height: 60px;
+}
+.logo h1 {
+  margin: 10px 0 10px 0;
+  text-align: center;
 }
 .sign, .check {
-  margin-top: 30px;
+  margin-top: 20px;
   height: 30px;
 
 }
 .sign_in, .check_in {
   text-align: center;
   text-transform: uppercase;
-  color: #fefefe;
+  color: #357ebd;
   font-size: 14px;
 }
 .sign_in:hover, .check_in:hover {
-  color: #fefefe;
+  color: #357ebd;
 }
 #modal_sign, #modal_check {
   background: rgba(0,0,0,0.7);
@@ -120,11 +88,33 @@ html {
   width: 100%;
   height: 100%;
 }
-
+/*---------навигация--------*/
+#nav {
+  background-color: #357ebd;
+  height: 60px;
+}
+.list_inline {
+  margin: 0;
+}
+.info {
+  display: inline-block;
+  color: #fefefe;
+  text-transform: uppercase;
+  padding: 20px 10px;
+}
+.infoLi :hover {
+  text-decoration: none;
+  color: #fefefe;
+  border-bottom: 4px solid #357ebd;
+}
+.infoLi {
+  display: inline-block;
+  list-style-type: none;
+}
 .search {
   width: 150px;
   position: relative;
-  margin: 25px 0 0 0;
+  margin: 14px 0 0 0;
 }
 .search input {
   border: none;
@@ -160,54 +150,114 @@ html {
   opacity: 0.8;
 }
 
-     /*----------Слайдер, Видио, Курс Валют-----------*/
+     /*----------Слайдер, Видио-----------*/
 
 #top_New_Slider {
-  height: 350px;
+  height: 300px;
+  margin: 50px 0 0 0;
 }
-.important_News {
-  font-size: 24px;
-  margin: 15px 0 15px 0;
-}
-.slider {
-  height: 250px;
-  padding: 0;
-  margin: 0;
-}
-.control-panel {
-  position: absolute;
-  height: 20px;
+#carusel{
+  height: 300px;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+#imgTitleSlaid{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  padding: 0 25px;
+  color: #c60304;
+  font-weight: bold;
+  font-size: 25px;
+}
+#carusel img{
+  width: 100%;
+}
+#carusel>.left, #carusel>.right{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  width: 45px;
+  left: -45px;
+  transition: all 0.5s linear;
+}
+#carusel>.right{
+  left: auto;
+  right: -45px;
+}
+#carusel:hover>.left{
+  left: 0px;
+}
+#carusel:hover>.right{
+  right: 0px;
+}
+#carusel>.left:before,#carusel>.left:after{
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 5px;
+  background: #fff;
+  transform: skewX(-10deg) translateY(-100%);
+  top: 50%;
+  left: 26%;
+}
+#carusel>.left:after{
+  transform: skewX(10deg) translateY(-1px);
+  left: 46%;
+}
+#carusel>.right:before,#carusel>.right:after{
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 5px;
+  background: #fff;
+  transform: skewX(10deg) translateY(-100%);
+  top: 50%;
+  right: 26%;
+}
+#carusel>.right:after{
+  transform: skewX(-10deg) translateY(-1px);
+  right: 46%;
+}
+#carusel>.left:before,#carusel>.left:after,
+#carusel>.right:before,#carusel>.right:after{
+  display: none;
+}
+#carusel>.left:hover:before,#carusel>.left:hover:after,
+#carusel>.right:hover:before,#carusel>.right:hover:after{
+  display: block;
+}
+.dote-carusel{
+  position: absolute;
+  height: 40px;
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: center;
 }
-.control-panel span {
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  background-color: #fefefe;
-  opacity: 0.5;
+.dote-carusel span{
+  width: 20px;
+  height: 20px;
+  background: rgba(220,220,220,0.6);
   border-radius: 50%;
+  display: inline-block;
+  margin: 10px 10px;
   cursor: pointer;
 }
-#activeBtn {
-  background-color: #fefefe;
-  opacity: 0.5;
+.dote-carusel span.active{
+  background: #232323;
 }
-.control-panel span:hover {
-  background-color: #357ebd;
+.dote-carusel span:hover{
+  background: #232323;
 }
 .video {
   padding: 0;
   margin: 0 0 0 30px;
-  height: 250px;
-}
-.weather {
-  margin: 0 0 0 30px;
-  padding: 0;
-  height: 250px;
-  text-align: center;
+  height: 300px;
 }
 
     /*---------Мейн-------------*/
@@ -236,8 +286,7 @@ html {
   margin: 15px 0 0 0;
   font-size: 18px;
 }
-#drop-down-tabs {
-  cursor: pointer;
+#harmonic_news {
   margin: 50px 0 0 0;
 }
 
@@ -295,7 +344,8 @@ html {
   .search {
     display: none;
   }
-  .important_News, .slider, .video, .weather {
+  .slider, .video {
+    height: 300px;
     padding: 10px;
     margin: 0;
   }
@@ -333,25 +383,8 @@ html {
   #toTop:active, #toTop:focus {
   	outline:none;
   }
-  /*гармошка*/
-  #drop-down-tabs {
-    margin: 0 0 10px 0;
-  }
 @media screen and (min-width:768px) and (max-width:970px) {
-  .nav-trigger {
-    position: absolute;
-    left: 15px;
-    top: 10px;
-    z-index: 2;
-    color: #fff;
-    height: 40px;
-    width: 40px;
-    background-image: url("../img/burger-button.png");
-  }
   .list_inline {
-    margin: 0 0 0 10px;
-  }
-  #drop_down {
     margin: 0 0 0 10px;
   }
   #header {
@@ -365,10 +398,5 @@ html {
   #top_New_Slider {
     padding: 10px;
     margin: 0 0 0 10px;
-  }
-  .weather {
-    padding: 0;
-    margin: 0;
-    margin-top: 10px;
   }
 }

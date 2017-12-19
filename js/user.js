@@ -1,50 +1,18 @@
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
 //button
-      var down = document.getElementById('nav-trigger');
-
-      down.addEventListener("click", function() {
-        var showUl = document.getElementById('drop_down');
-          if (showUl.style.display == 'none') {
-            showUl.style.display = 'block';
-          } else {
-            showUl.style.display = 'none';
-          }
-      });
-
-//slider
-
-      var slider = document.getElementById('images');
-      var imgArr = ['6.jpg', '7.jpg', '8.jpg'];
-      slider.src = "img/" + imgArr[0];
-
-      var prevBtn = document.getElementById('prevBtn');
-      var nextBtn = document.getElementById('nextBtn');
-
-      nextBtn.addEventListener("click", next, false);
-      prevBtn.addEventListener("click", prev, false);
-
-      var i=0;
-
-      function prev() {
-          if (i == 0) {
-            i = imgArr.length;
-          } i--;
-          slider.src = "img/" + imgArr[i];
-      };
-
-      function next() {
-          j = imgArr.length-1;
-            if(i == j) {
-              i = 0;
-            }
-            i++;
-            slider.src = "img/" + imgArr[i];
-      }
-      setInterval( next, 2000 );
+//       var down = document.getElementById('nav-trigger');
+//
+//       down.addEventListener("click", function() {
+//         var showUl = document.getElementById('drop_down');
+//           if (showUl.style.display == 'none') {
+//             showUl.style.display = 'block';
+//           } else {
+//             showUl.style.display = 'none';
+//           }
+//       });
 
       //sign-modal
-
           var sign = document.getElementById('sign_in');
 
           sign.addEventListener("click", function() {
@@ -121,7 +89,7 @@ function ready() {
                 var createNews = document.getElementById('parse_news');
 
                 var newsItem = document.createElement('div');
-                newsItem.className = 'news-item';
+                newsItem.className = 'col-xs-12 col-sm-8 news-item';
                 createNews.appendChild(newsItem);
 
                 var newsTitle = document.createElement('h3');
@@ -179,63 +147,6 @@ function ready() {
           //scroll to top
           $().UItoTop({ easingType: 'easeOutQuart' });
 
-          //Accordeon
-          var tabs = document.querySelectorAll("div.tab"),
-          texts = document.querySelectorAll("div.tab>p");
-
-          tabs[0].onclick = function expand() {
-            if (texts[0].className == "displayed") {
-              texts[0].className = "hidden";
-              tabs[0].classList.remove("expanded");
-            } else {
-              for (var i = 0; i < texts.length; i++) {
-                texts[i].className = "hidden";
-                tabs[i].classList.remove("expanded");
-                texts[0].className = "displayed";
-                tabs[0].classList.add("expanded");
-              }
-            }
-          };
-          tabs[1].onclick = function expand() {
-            if (texts[1].className == "displayed") {
-              texts[1].className = "hidden";
-              tabs[1].classList.remove("expanded");
-            } else {
-              for (var i = 0; i < texts.length; i++) {
-                texts[i].className = "hidden";
-                tabs[i].classList.remove("expanded");
-                texts[1].className = "displayed";
-                tabs[1].classList.add("expanded");
-              }
-            }
-          };
-          tabs[2].onclick = function expand() {
-            if (texts[2].className == "displayed") {
-              texts[2].className = "hidden";
-              tabs[2].classList.remove("expanded");
-            } else {
-              for (var i = 0; i < texts.length; i++) {
-                texts[i].className = "hidden";
-                tabs[i].classList.remove("expanded");
-                texts[2].className = "displayed";
-                tabs[2].classList.add("expanded");
-              }
-            }
-          };
-          tabs[3].onclick = function expand() {
-            if (texts[3].className == "displayed") {
-              texts[3].className = "hidden";
-              tabs[3].classList.remove("expanded");
-            } else {
-              for (var i = 0; i < texts.length; i++) {
-                texts[i].className = "hidden";
-                tabs[i].classList.remove("expanded");
-                texts[3].className = "displayed";
-                tabs[3].classList.add("expanded");
-              }
-            }
-          };
-
           //advertising
           function getCookie(name) {
             var matches = document.cookie.match(new RegExp(
@@ -251,7 +162,98 @@ function ready() {
             }
           }, 1000);
 
+          //slider
+            var stroke = 0;
+            $.get("https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=6f7c85381a5c44deb7e024cd02c60e31",
+                function (result) {
+                    document.getElementById('imgSlaid').src = result.articles[stroke].urlToImage;
+                });
+
+          //parse menu
+          function getMenu (menuArr) {
+            var createMenu = document.getElementById('parse-menu');
+            menuArr = JSON.parse(menuArr);
+
+            for(i=0; i < menuArr.length; i++) {
+
+             var navLi = document.createElement('li');
+             navLi.className = 'infoLi';
+             navLi.innerHTML = "<a class='info' href='"+ menuArr[i].link +"'>" + menuArr[i].name + "</a>";
+             createMenu.appendChild(navLi);
+            }
+          }
+
+
+            //get nav menu
+          $.ajax({
+            url: "http://localhost/dashboard/paper/json/menu.json",
+              beforeSend: function( xhr ) {
+              xhr.overrideMimeType( "text/plain; charset=utf-8" );
+              }
+              })
+            .done(function( data ) {
+              getMenu(data);
+            });
+
+          //string
+
+          var name = 'sasha';
+          var familiya = 'bondar';
+          var stroka = '<ul><li>' + '<a href="#"' + '</a>' + name + '<div class="ggg"' + familiya + '</div>' + '</li></ul>';
+          console.log(stroka);
+
+          var spisok = ['sasha', 'kolya', 'petya', 'masha', 'anya'];
+          var add = '';
+           for (i=0; i < spisok.length; i++) {
+               add += spisok[i]+' ';
+           }
+           console.log(add);
+
+    //harmonic
+    function showHarmonic (harmonicArr) {
+        for (key in harmonicArr) {
+            var titleHarm = harmonicArr[key].title;
+            var descriptionHarm = harmonicArr[key].description;
+            var harmonicUl = document.querySelector('#harmonic_news>ul');
+
+            var harmonicNewsLi = document.createElement('li');
+            harmonicNewsLi.textContent = titleHarm;
+            harmonicUl.appendChild(harmonicNewsLi);
+
+            var harmonicNewsLiUl = document.createElement('ul');
+            harmonicNewsLiUl.style.display = 'none';
+            harmonicNewsLi.appendChild(harmonicNewsLiUl);
+
+            var harmonicNewsLiUlLi = document.createElement('li');
+            harmonicNewsLiUlLi.textContent = descriptionHarm;
+            harmonicNewsLiUl.appendChild(harmonicNewsLiUlLi);
+        }
+    }
+
+            //get
+            $.get("https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=6f7c85381a5c44deb7e024cd02c60e31",
+                function(e) {
+                    var harmonicArr = e.articles;
+                    showHarmonic(harmonicArr);
+                }
+            );
+            //harmonic news
+            $('#harmonic_news').on('click', "li", function(){
+                var itemElemetnSelector = $(this).children('ul');
+                if (itemElemetnSelector != null) {
+                    if (itemElemetnSelector[0].style.display == 'none') {
+                        var harmonicNewsNew = document.querySelectorAll('#harmonic_news>ul ul');
+                        for (var j = 0; j < harmonicNewsNew.length; j++) {
+                            harmonicNewsNew[j].style.display = 'none';
+                        }
+                        itemElemetnSelector[0].style.display = 'block';
+                    } else {
+                        itemElemetnSelector[0].style.display = 'none';
+                    }
+                }
+            });
 
 
 
-}
+
+        }

@@ -8,92 +8,14 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-
-    <section id="nav">
-    	
-        <div class="container">
-          <div class="row">
-            <menu id="for_all"></menu>
-            <label id="nav-trigger" class="nav-trigger"></label>
-            <ul class="list_inline">
-              <a href="pages/allNews.html" class="info">
-                <li>Все новости</li>
-              </a>
-              <a href="#" class="info">
-                <li>Мир</li>
-              </a>
-              <a href="#" class="info">
-                <li>Украина</li>
-              </a>
-              <a href="#" class="info">
-                <li>Политика</li>
-              </a>
-              <a href="#" class="info">
-                <li>Спорт</li>
-              </a>
-              <a href="#" class="info">
-                <li>Мода</li>
-              </a>
-              <a href="#" class="info">
-                <li>Здоровье</li>
-              </a>
-              <a href="#" class="info">
-                <li>Погода</li>
-              </a>
-              <a href="#" class="info">
-                <li>Кино</li>
-              </a>
-              <a href="#" class="info">
-                <li>Рестораны</li>
-              </a>
-              <a href="#" class="info">
-                <li>Книги</li>
-              </a>
-              <a href="#" class="info">
-                <li>Финансы</li>
-              </a>
-              </ul>
-
-              <ul id="drop_down" style="display:none">
-              <a href="#" class="info">
-                <li>Куда б сходить</li>
-              </a>
-              <a href="#" class="info">
-                <li>Бизнес</li>
-              </a>
-              <a href="#" class="info">
-                <li>Фото</li>
-              </a>
-              <a href="#" class="info">
-                <li>Реклама</li>
-              </a>
-              <a href="#" class="info">
-                <li>Криминал</li>
-              </a>
-              <a href="#" class="info">
-                <li>Шоу-Биз</li>
-              </a>
-              <a href="#" class="info">
-                <li>Наука</li>
-              </a>
-              <a href="#" class="info">
-                <li>Отзывы</li>
-              </a>
-              </>
-          </div>
-        </div>
-      </section>
-
-      <div class="container">
+      <div class="container" id="advertising">
         <div class="row">
           <div class="col-xs-12">
-            <div id="advertising">
                 <h2>Хочешь увеличить грудь???</h2>
                 <p>Надоело смотреть на подруг?</p>
                 <p>Хочешь третий вместо первого?</p>
                 <h3>Тебе к нам!!!</h3>
                 <img src="img/showRecl.jpg" alt="">
-            </div>
           </div>
         </div>
       </div>
@@ -101,10 +23,13 @@
       <section id="header">
           <div class="container">
             <div class="row">
-              <div class="logo col-xs-12 col-sm-2 col-md-2">
+                <div class="col-xs-hidden col-sm-5">
+                    <h3>Горячие Новости</h3>
+                </div>
+              <div class="logo col-xs-12 col-sm-2">
                 <h1>News</h1>
               </div>
-              <div class="sign col-xs-5 col-sm-1 col-md-1">
+              <div class="sign col-xs-5 col-sm-1 col-sm-offset-1">
                 <a href="#" class="sign_in" id="sign_in">Войти</a>
               </div>
                 <div id="modal_sign" style="display:none;">
@@ -127,7 +52,7 @@
                       </form>
                   </div>
                 </div>
-                <div class="check col-xs-6 col-sm-3 col-md-2">
+                <div class="check col-xs-6 col-sm-3">
                   <a href="#" class="check_in" id="check_in">Зарегистрироваться</a>
                 </div>
                 <div id="modal_check" style="display:none;">
@@ -153,34 +78,44 @@
                       </form>
                   </div>
                 </div>
-                <div class="search_in col-sm-offset-3 col-sm-3 col-md-offset-5 col-md-2">
-                  <form class="search">
-                    <input type="search" name="" placeholder="поиск" class="find"/>
-                    <input type="submit" name="" value="" class="submit"/>
-                  </form>
-                </div>
             </div>
+          </div>
+      </section>
+
+      <section id="nav">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-9">
+                  <!--<label id="nav-trigger" class="nav-trigger"></label>-->
+                  <ul class="list_inline" id="parse-menu"></ul>
+                  </div>
+                  <div class="search_in col-sm-2 col-sm-offset-1">
+                      <form class="search">
+                          <input type="search" name="" placeholder="поиск" class="find"/>
+                          <input type="submit" name="" value="" class="submit"/>
+                      </form>
+                  </div>
+              </div>
           </div>
       </section>
 
     <section id="top_New_Slider">
       <div class="container">
         <div class="row">
-          <p class="important_News">Нацбанк намерен прекратить чеканку мелких монет.</p>
-            <div class="slider col-xs-12 col-sm-6 col-md-4">
-              <img src="" alt="" id="images" width="100%" height="100%">
-                <div class="control-panel">
-                  <span id="prevBtn"></span>
-                  <span id="activeBtn"></span>
-                  <span id="nextBtn"></span>
+            <div class="col-xs-12 col-sm-5 col-md-6" id="carusel">
+                <a class="left"></a>
+                <h3 id="imgTitleSlaid"></h3>
+                <img src="" alt="" id="imgSlaid">
+                <a class="right"></a>
+                <div class="dote-carusel">
+                    <span class="left"></span>
+                    <span class="active"></span>
+                    <span class="right"></span>
                 </div>
             </div>
-            <div class="video col-xs-12 col-sm-5 col-md-4">
+            <div class="video col-xs-12 col-sm-5 col-md-5">
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CS2Uax9ewb0" frameborder="0" allowfullscreen></iframe>
             </div>
-              <div class="weather col-xs-12 col-sm-5 col-md-3" id="weather">
-                <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="http://www.meteoprog.ua/widget_v2/show/5a19056398485293188d2889/"></iframe>
-              </div>
           </div>
         </div>
     </section>
@@ -188,53 +123,16 @@
     <section id="main">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12">
             <div id="parse_news">
 
             </div>
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="tab" id="drop-down-tabs">
-                    <h3>В Киеве ожидается сильный туман до утра воскресенья</h3>
-                    <img src="img/drop-down/1.jpg" alt="" width="100%" height="100%">
-                    <p class="hidden">В Киеве в течение 25 ноября, а также ночью и утром 26 ноября ожидается туман с видимостью 200-500 м. <br>
-                       Об этом <a htef="http://www.dsns.gov.ua/ua/Ostanni-novini/70566.html">сообщает</a> Госслужба по чрезвычайным ситуациям. <br>
-                       Кроме того, по информации спасателей, в восточных областях 26-27 ноября на дорогах ожидается гололедица.</p>
+              <div class="col-xs-12">
+                  <div id="harmonic_news">
+                      <ul>
+
+                      </ul>
                   </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="tab" id="drop-down-tabs">
-                    <h3>Штаб АТО: Боевики могут готовить провокации из-за визита миссии ОБСЕ</h3>
-                    <img src="img/drop-down/2.jpg" alt="" width="100%" height="100%">
-                    <p class="hidden">В штабе АТО ожидают провокации со стороны гибридных войск на Донецком направлении. <br>
-                      Как <a href="https://www.facebook.com/ato.news/posts/1765718786772253">сообщает</a> пресс-центр АТО, это связано с визитом представителей Специальной мониторинговой миссии ОБСЕ в населенные пункты Гладосово и Майское Донецкой области. <br>
-                      "Мы отслеживаем ситуацию на этом участке линии соприкосновения и будем информировать общественность и мировое сообщество о возможных провокациях", - отметили в штабе</p>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="tab" id="drop-down-tabs">
-                    <h3>Пьяный водитель фуры устроил масштабное ДТП в Киеве</h3>
-                    <img src="img/drop-down/3.jpg" alt="" width="100%" height="100%">
-                    <p class="hidden">Ночью в Киеве произошло масштабное ДТП с пострадавшим, виновником которого стал нетрезвый водитель. <br>
-                      Как <a href="https://www.facebook.com/dtp.kiev.ua/posts/931362960362931">сообщает</a> dtp.kiev.ua, на Житомирской трассе полицейские остановили фуру Volvo для проверки. Оказалось, что водитель автомобиля был пьян. На место приехал поручитель и заверил, что данный водитель больше не сядет за руль, а фуру поведет другой человек. <br>
-                      После оформления транспорт и мужчин отпустили. <br>
-                      Однако пьяный водитель снова оказался за рулем фуры. На проспекте Победы мужчина не справился с управлением и по касательной врезался в припаркованный эвакуатор, а затем на полной скорости влетел в автомобиль такси Toyota, после чего врезался в дерево.</p>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="tab" id="drop-down-tabs">
-                    <h3>В Одесской области задержали за взятки руководителей райотдела полиции</h3>
-                    <img src="img/drop-down/4.jpg" alt="" width="100%" height="100%">
-                    <p class="hidden">В Одесской области правоохранители задержали во время получения взятки руководителей одного из районных отделений полиции. <br>
-                      Неправомерные выгоды в этом отделении требовали систематически – таким образом подозреваемые не привлекались к уголовной ответственности, <a href="https://ssu.gov.ua/ua/news/1/category/21/view/4163#.0EQcTbJV.dpbs">передает</a> пресс-центр Службы безопасности Украины. <br>
-                      Оперативники спецслужбы, в частности, задокументировали факт вымогательства злоумышленниками от местного жителя 15 тысяч гривен, чтобы он избежал наказания за кражу коммунального имущества. <br>
-                      Среди коррупционеров оказался подполковник полиции. Его задержали оперативники СБУ после передачи очередной части неправомерной выгоды в размере девять тысяч гривен. <br>
-                      По данным фактам открыто уголовное дело по ч. 3 ст. 368 Уголовного кодекса Украины. Максимальная санкция статьи - 12 лет. <br>
-                      Ранее сообщалось, что правоохранители задержали в Киеве начальника следственного отделения одного из подразделений Нацполиции.</p>
-                  </div>
-                </div>
               </div>
-          </div>
         </div>
       </div>
     </section>
@@ -253,9 +151,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/coockie.js"></script>
     <script src="js/user.js"></script>
-        <!-- easing plugin ( optional ) -->
-    	<script src="js/easing.js" type="text/javascript"></script>
-    	<!-- UItoTop plugin -->
-    	<script src="js/jquery.ui.totop.js" type="text/javascript"></script>
+    <script src="js/easing.js" type="text/javascript"></script>
+    <script src="js/jquery.ui.totop.js" type="text/javascript"></script>
   </body>
 </html>
