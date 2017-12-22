@@ -9,6 +9,11 @@ html {
 #header {
   height: 60px;
 }
+#header h4 {
+  margin: 25px 0 0 0;
+  color: #357ebd;
+  cursor: pointer;
+}
 .logo {
   text-transform: uppercase;
   color: #357ebd;
@@ -102,14 +107,14 @@ html {
   text-transform: uppercase;
   padding: 20px 10px;
 }
+.infoLi {
+  display: inline-block;
+  list-style-type: none;
+}
 .infoLi :hover {
   text-decoration: none;
   color: #fefefe;
   border-bottom: 4px solid #357ebd;
-}
-.infoLi {
-  display: inline-block;
-  list-style-type: none;
 }
 .search {
   width: 150px;
@@ -158,6 +163,8 @@ html {
 }
 #carusel{
   height: 300px;
+  padding-right: 0;
+  padding-left: 0;
   text-align: center;
   overflow: hidden;
   position: relative;

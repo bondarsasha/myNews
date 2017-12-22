@@ -89,7 +89,7 @@ function ready() {
                 var createNews = document.getElementById('parse_news');
 
                 var newsItem = document.createElement('div');
-                newsItem.className = 'col-xs-12 col-sm-8 news-item';
+                newsItem.className = 'col-xs-12 news-item';
                 createNews.appendChild(newsItem);
 
                 var newsTitle = document.createElement('h3');
@@ -200,14 +200,12 @@ function ready() {
           var name = 'sasha';
           var familiya = 'bondar';
           var stroka = '<ul><li>' + '<a href="#"' + '</a>' + name + '<div class="ggg"' + familiya + '</div>' + '</li></ul>';
-          console.log(stroka);
 
           var spisok = ['sasha', 'kolya', 'petya', 'masha', 'anya'];
           var add = '';
            for (i=0; i < spisok.length; i++) {
                add += spisok[i]+' ';
            }
-           console.log(add);
 
     //harmonic
     function showHarmonic (harmonicArr) {
