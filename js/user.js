@@ -162,12 +162,83 @@ function ready() {
             }
           }, 1000);
 
-          //slider
-            var stroke = 0;
-            $.get("https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=6f7c85381a5c44deb7e024cd02c60e31",
-                function (result) {
-                    document.getElementById('imgSlaid').src = result.articles[stroke].urlToImage;
-                });
+
+            // carousel
+            var imgSlaid = document.getElementById('imgSlaid');
+            var imgTitleSlaid = document.getElementById('imgTitleSlaid');
+            var imgArr = [];
+            var imgTitle = [];
+            var imgUrl = [];
+            var left = document.getElementsByClassName('left')
+            var right = document.getElementsByClassName('right');
+
+
+            for (var z = 0; z < left.length; z++) {
+                left[z].addEventListener('click', prev, false);
+            }
+            for (var x = 0; x < left.length; x++) {
+                right[x].addEventListener('click', next, false);
+            }
+
+            var i = 0;
+
+            function prev() {
+                if (i == 0) {
+                    i = imgArr.length;
+                }
+                i--;
+                imgSlaid.src = imgArr[i];
+                imgSlaid.alt = imgTitle[i];
+                imgSlaid.title = imgTitle[i];
+                imgTitleSlaid.textContent = imgTitle[i];
+            }
+
+            function next() {
+                i++;
+                var j = imgArr.length;
+                if (i == j) {
+                    i = 0;
+                }
+                imgSlaid.src = imgArr[i];
+                imgSlaid.alt = imgTitle[i];
+                imgSlaid.title = imgTitle[i];
+                imgTitleSlaid.textContent = imgTitle[i];
+            }
+
+            // autoplay
+            var carouselPlay = setInterval(next, 1000);
+
+            // hover stop
+            function clearCarouselPlay() {
+                clearInterval(carouselPlay);
+            }
+
+            function noClearCarouselPlay() {
+                carouselPlay = setInterval(next, 1000);
+            }
+            var carusel = document.getElementById('carusel');
+            carusel.addEventListener('mouseover', clearCarouselPlay, false);
+            carusel.addEventListener('mouseout', noClearCarouselPlay, false);
+
+            $.ajax({
+                url: 'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=6f7c85381a5c44deb7e024cd02c60e31',
+                success: function(elem) {
+
+                    var arrNews = elem.articles;
+                    for(var i = 0; i < arrNews.length; i++){
+                        var titleNews = arrNews[i].title;
+                        imgTitle.push(titleNews);
+                        imgSlaid.title = imgTitle[0];
+                        imgTitleSlaid.textContent = imgTitle[0];
+                        var urlNews = arrNews[i].url;
+                        imgUrl.push(urlNews);
+                        imgTitleSlaid.href = imgUrl[0];
+                        var urlToImageNews = arrNews[i].urlToImage;
+                        imgArr.push(urlToImageNews);
+                        imgSlaid.src = imgArr[0];
+                    }
+                }
+            });
 
           //parse menu
           function getMenu (menuArr) {
@@ -195,17 +266,6 @@ function ready() {
               getMenu(data);
             });
 
-          //string
-
-          var name = 'sasha';
-          var familiya = 'bondar';
-          var stroka = '<ul><li>' + '<a href="#"' + '</a>' + name + '<div class="ggg"' + familiya + '</div>' + '</li></ul>';
-
-          var spisok = ['sasha', 'kolya', 'petya', 'masha', 'anya'];
-          var add = '';
-           for (i=0; i < spisok.length; i++) {
-               add += spisok[i]+' ';
-           }
 
     //harmonic
     function showHarmonic (harmonicArr) {

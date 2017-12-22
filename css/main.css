@@ -9,10 +9,14 @@ html {
 #header {
   height: 60px;
 }
-#header h4 {
-  margin: 25px 0 0 0;
+.top-news {
+  margin-top: 20px;
   color: #357ebd;
   cursor: pointer;
+  font-size: 18px;
+}
+.top-news :hover {
+  color: #357ebd;s
 }
 .logo {
   text-transform: uppercase;
@@ -30,9 +34,8 @@ html {
 }
 .sign_in, .check_in {
   text-align: center;
-  text-transform: uppercase;
   color: #357ebd;
-  font-size: 14px;
+  font-size: 18px;
 }
 .sign_in:hover, .check_in:hover {
   color: #357ebd;
@@ -96,7 +99,7 @@ html {
 /*---------навигация--------*/
 #nav {
   background-color: #357ebd;
-  height: 60px;
+  /*height: 60px;*/
 }
 .list_inline {
   margin: 0;
@@ -106,15 +109,16 @@ html {
   color: #fefefe;
   text-transform: uppercase;
   padding: 20px 10px;
+  border-bottom: 4px solid #357ebd;
+}
+.infoLi :hover {
+  color: #fefefe;
+  text-decoration: none;
+  border-bottom: 4px solid rgba(255,255,255,.50);
 }
 .infoLi {
   display: inline-block;
   list-style-type: none;
-}
-.infoLi :hover {
-  text-decoration: none;
-  color: #fefefe;
-  border-bottom: 4px solid #357ebd;
 }
 .search {
   width: 150px;
@@ -238,37 +242,19 @@ html {
 #carusel>.right:hover:before,#carusel>.right:hover:after{
   display: block;
 }
-.dote-carusel{
-  position: absolute;
-  height: 40px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-.dote-carusel span{
-  width: 20px;
-  height: 20px;
-  background: rgba(220,220,220,0.6);
-  border-radius: 50%;
-  display: inline-block;
-  margin: 10px 10px;
-  cursor: pointer;
-}
-.dote-carusel span.active{
-  background: #232323;
-}
-.dote-carusel span:hover{
-  background: #232323;
-}
 .video {
   padding: 0;
-  margin: 0 0 0 30px;
+  margin: 0 0 0 90px;
   height: 300px;
 }
 
     /*---------Мейн-------------*/
 
+.main_h2 {
+  color: #357ebd;
+  text-align: center;
+  margin-top: 30px;
+}
 .news-title {
   text-transform: uppercase;
   color: #357ebd;
@@ -313,11 +299,14 @@ html {
 /*--------media---------*/
 
 @media screen and (min-width:320px) and (max-width:767px) {
+  #advertising {
+    display: none;
+  }
   #nav {
     display: none;
   }
   #header {
-    height: 100px;
+    height: 100%;
   }
   .sign {
     margin: 0;
@@ -351,10 +340,23 @@ html {
   .search {
     display: none;
   }
-  .slider, .video {
-    height: 300px;
-    padding: 10px;
+  #top_New_Slider {
+    height: 100%;
     margin: 0;
+    padding: 0.5vh;
+  }
+  #carusel {
+    height: 250%;
+    padding: 0;
+    margin: 0;
+  }
+  .left, .right {
+    display: none;
+  }
+  .video {
+    height: 250px;
+    padding: 10px;
+    margin: 30px 0 0 0;
   }
   #footer {
     height: 100%;
